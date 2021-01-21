@@ -42,4 +42,4 @@ class SessionControler {
     }
 }
 
-export default new SessionControler
+export default new SessionControler()
