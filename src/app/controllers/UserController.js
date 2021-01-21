@@ -1,6 +1,4 @@
 import * as Yup from 'yup'
-import { string } from 'yup/lib/locale'
-import { password } from '../../config/database'
 import User from '../models/User'
 
 
