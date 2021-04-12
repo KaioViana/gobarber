@@ -51,7 +51,7 @@ class UserController {
             return res.status(400).json({ error: 'Validations fails' })
         }
 
-        const { email, password, oldPassword } = req.body
+        const { name, email, password, oldPassword } = req.body
 
         const user = await User.findByPk(req.userId)
 
@@ -67,9 +67,9 @@ class UserController {
             return res.status(400).json({ error: 'Password dos not match' })
         }
 
-        await user.update({ email, password })
+        await user.update({ name, email, password })
 
-        const { id, name, avatar } = await User.findByPk(req.userId, {
+        const { id, avatar } = await User.findByPk(req.userId, {
             include: [
                 {
                     model: File,
